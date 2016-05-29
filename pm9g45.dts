@@ -1,0 +1,33 @@
+	leds {
+		compatible = "gpio-leds";
+
+		led0 {
+			label = "led0";
+			gpios = <&pioD 0 1>;
+			linux,default-trigger = "nand-disk";
+		};
+
+		led1 {
+			label = "led1";
+			gpios = <&pioD 31 0>;
+			linux,default-trigger = "heartbeat";
+		};
+	};
+
+	gpio_keys {
+		compatible = "gpio-keys";
+		#address-cells = <1>;
+		#size-cells = <0>;
+
+		right {
+			label = "SW4";
+			gpios = <&pioE 7 1>;
+			linux,code = <106>;
+		};
+
+		up {
+			label = "SW3";
+			gpios = <&pioE 8 1>;
+			linux,code = <103>;
+		};
+	};
